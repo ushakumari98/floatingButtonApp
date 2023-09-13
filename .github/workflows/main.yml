@@ -1,42 +1,25 @@
-name: My CI/CD Workflow
+name: CI/CD for Main Branch
 
  
 
 on:
   push:
     branches:
-      - main  # Define the branch that triggers the workflow
+      - main
 
  
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Specify the runner (GitHub-hosted runner) for the job
+    runs-on: ubuntu-latest
 
  
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2  # Action to checkout the repository
+        uses: actions/checkout@v2
 
  
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2  # Action to set up Node.js
-        with:
-          node-version: '14'  # Specify the Node.js version
-
- 
-
-      - name: Install Dependencies
-        run: npm install  # Run a shell command to install dependencies
-
- 
-
-      - name: Build
-        run: npm run build  # Run a shell command to build the project
-
- 
-
-      - name: Run Tests
-        run: npm test  # Run a shell command to run tests
+      - name: Run a Command
+        run: echo "Hello, GitHub Actions!"
